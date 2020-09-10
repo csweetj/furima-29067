@@ -10,7 +10,7 @@
 
 ### Association
 - has_many :comments
-- has_many :items
+- has_many :items, through: user_item
 - has_many :likes
 - has_many :purchase
 
@@ -29,7 +29,7 @@
 - has_many :comments
 - has_many :likes
 - has_many :purchase
-- has_one :users
+- has_one :users, through: user_item
 
 ## user_item テーブル
 | Column | Type       | Options                        |
