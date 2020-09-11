@@ -4,13 +4,13 @@
 ## users テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| nickname     | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
-| first_name | string | null: false |
-| last_name | string | null: false |
-| first_name_kana | string | null: false |
-| last_name_kana | string | null: false |
+| nickname     | text | null: false |
+| email    | text | null: false |
+| password | text | null: false |
+| first_name | text | null: false |
+| last_name | text | null: false |
+| first_name_kana | text | null: false |
+| last_name_kana | text | null: false |
 | birthday | int | null: false |
 
 ### Association
@@ -23,12 +23,17 @@
 ## item テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| name       | string | null: false |
-| sellername | string | null: false |
-| price      |integer | null: false |
-| image      | text   | null: false |
-| category   | string   | null: false |
-| stock      | integer | null: false | 
+| image       | text | null: false |
+| item_name | text | null: false |
+| item_describe      |text | null: false |
+| category      | text   | null: false |
+| condition   | text   | null: false |
+| price      | int | null: false | 
+| delivery_fee      | text | null: false | 
+| shipping_from      | text | null: false | 
+| delivery_day    | text | null: false | 
+| stock     | int |     | 
+
 
 ### Association
 - has_many :comments
