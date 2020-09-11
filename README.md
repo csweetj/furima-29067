@@ -25,6 +25,7 @@
 | -------- | ------ | ----------- |
 | image       | text | null: false |
 | item_name | text | null: false |
+| seller_name | text | null: false |
 | item_describe      |text | null: false |
 | category      | text   | null: false |
 | condition   | text   | null: false |
