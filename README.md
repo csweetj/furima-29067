@@ -17,7 +17,7 @@
 - has_many :comments
 - has_many :items, through: user_item
 - has_many :likes
-- has_many :purchase
+- has_many :purchases
 
 
 ## item テーブル
@@ -38,7 +38,7 @@
 ### Association
 - has_many :comments
 - has_many :likes
-- has_many :purchase
+- has_many :purchases
 - has_one :users, through: user_item
 
 ## user_item テーブル
@@ -48,8 +48,8 @@
 | item   | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
 
 
 ## comment テーブル
@@ -60,8 +60,8 @@
 | item   | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
 
 
 ## like テーブル
@@ -71,8 +71,8 @@
 | item   | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
 
 
 ## purchase テーブル
@@ -82,8 +82,8 @@
 | item   | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
 - has_one :shipping
 
 
