@@ -91,7 +91,12 @@
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | purchase   | references | null: false, foreign_key: true |
-| address   | string | null: false |
+| postal_code| int | null: false |
+| prefecture| text | null: false |
+| municipality| text | null: false |
+| address_number | text | null: false |
+| building_name| text |  |
+| phone_number| int | null: false |
 
 ### Association
 - belongs_to :purchase
