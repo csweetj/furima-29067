@@ -4,50 +4,38 @@
 ## users テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| nickname     | text | null: false |
-| email    | text | null: false |
-| password | text | null: false |
-| first_name | text | null: false |
-| last_name | text | null: false |
-| first_name_kana | text | null: false |
-| last_name_kana | text | null: false |
+| nickname     | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
+| first_name | string | null: false |
+| last_name | string | null: false |
+| first_name_kana | string | null: false |
+| last_name_kana | string | null: false |
 | birthday | int | null: false |
 
 ### Association
-- has_many :items, through: user_item
+- has_many :items
 - has_many :purchases
 
 
 ## item テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| image       | text | null: false |
-| item_name | text | null: false |
-| seller_name | text | null: false |
-| item_describe      |text | null: false |
-| category      | text   | null: false |
-| condition   | text   | null: false |
+| item_name | string | null: false |
+| item_describe      |string | null: false |
+| category      | int   | null: false |
+| condition   | int   | null: false |
 | price      | int | null: false | 
-| delivery_fee      | text | null: false | 
-| shipping_from      | text | null: false | 
-| delivery_day    | text | null: false | 
-| stock     | int |     | 
+| delivery_fee      | int | null: false | 
+| shipping_from      | int | null: false | 
+| delivery_day    | int | null: false | 
 
 
-### Association
-- has_many :purchases
-- has_one :users, through: user_item
-
-## user_item テーブル
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
-- belongs_to :item
-
+- has_one :purchase
+ 
 
 ## purchase テーブル
 | Column | Type       | Options                        |
@@ -65,12 +53,12 @@
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | purchase   | references | null: false, foreign_key: true |
-| postal_code| int | null: false |
-| prefecture| text | null: false |
-| municipality| text | null: false |
-| address_number | text | null: false |
-| building_name| text |  |
-| phone_number| int | null: false |
+| postal_code| string | null: false |
+| prefecture| int | null: false |
+| municipality| string | null: false |
+| address_number | string | null: false |
+| building_name| string |  |
+| phone_number| string | null: false |
 
 ### Association
 - belongs_to :purchase
