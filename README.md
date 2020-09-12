@@ -15,7 +15,6 @@
 
 ### Association
 - has_many :items, through: user_item
-- has_many :likes
 - has_many :purchases
 
 
@@ -36,22 +35,10 @@
 
 
 ### Association
-- has_many :likes
 - has_many :purchases
 - has_one :users, through: user_item
 
 ## user_item テーブル
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :user
-- belongs_to :item
-
-
-## like テーブル
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
