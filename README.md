@@ -18,17 +18,17 @@
 - has_many :purchases
 
 
-## item テーブル
+## items テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| item_name | string | null: false |
-| item_describe      |string | null: false |
-| category_id      | int   | null: false, foreign_key: true |
-| condition_id   | int   | null: false, foreign_key: true |
+| name | string | null: false |
+| describe      |string | null: false |
+| category_id      | int   | null: false |
+| condition_id   | int   | null: false |
 | price      | int | null: false | 
-| delivery_fee_id      | int | null: false, foreign_key: true | 
-| shipping_from_id     | int | null: false, foreign_key: true | 
-| delivery_day_id    | int | null: false, foreign_key: true | 
+| delivery_fee_id      | int | null: false | 
+| shipping_from_id     | int | null: false | 
+| delivery_day_id    | int | null: false | 
 
 
 
@@ -43,7 +43,7 @@
 
  
 
-## purchase テーブル
+## purchases テーブル
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
@@ -55,12 +55,12 @@
 - has_one :shipping
 
 
-## shipping テーブル
+## shippings テーブル
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | purchase   | references | null: false, foreign_key: true |
 | postal_code| string | null: false |
-| prefecture_id| int | null: false, foreign_key: true |
+| prefecture_id| int | null: false　|
 | municipality| string | null: false |
 | address_number | string | null: false |
 | building_name| string |  |
