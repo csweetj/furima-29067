@@ -23,12 +23,12 @@
 | -------- | ------ | ----------- |
 | item_name | string | null: false |
 | item_describe      |string | null: false |
-| category_id      | int   | null: false |
-| condition_id   | int   | null: false |
+| category_id      | int   | null: false, foreign_key: true |
+| condition_id   | int   | null: false, foreign_key: true |
 | price      | int | null: false | 
-| delivery_fee_id      | int | null: false | 
-| shipping_from_id     | int | null: false | 
-| delivery_day_id    | int | null: false | 
+| delivery_fee_id      | int | null: false, foreign_key: true | 
+| shipping_from_id     | int | null: false, foreign_key: true | 
+| delivery_day_id    | int | null: false, foreign_key: true | 
 
 
 
@@ -38,7 +38,7 @@
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :delivery_fee
-- belongs_to_active_hash :shipping_from
+- belongs_to_active_hash :prefecture
 - belongs_to_active_hash :delivery_day
 
  
@@ -60,7 +60,7 @@
 | ------ | ---------- | ------------------------------ |
 | purchase   | references | null: false, foreign_key: true |
 | postal_code| string | null: false |
-| prefecture_id| int | null: false |
+| prefecture_id| int | null: false, foreign_key: true |
 | municipality| string | null: false |
 | address_number | string | null: false |
 | building_name| string |  |
