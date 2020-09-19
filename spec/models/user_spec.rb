@@ -50,7 +50,8 @@ describe User do
         @user.password = "a"
         @user.password_confirmation = "a"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+        expect(@user.errors.full_messages).to include("Password Include both letters and numbers")
       end
       it "passwordが存在してもpassword_confirmationが空では登録できない" do
         @user.password_confirmation = ""
@@ -61,8 +62,8 @@ describe User do
         @user.first_name_kana = "tanaka"
         @user.last_name_kana = "tarou"
         @user.valid?
-        expect(@user.errors.full_messages).to include("First name kana is invalid")
-        expect(@user.errors.full_messages).to include("Last name kana is invalid")
+        expect(@user.errors.full_messages).to include("First name kana Full-width katakana characters")
+        expect(@user.errors.full_messages).to include("Last name kana Full-width katakana characters")
       end
     end
   end
