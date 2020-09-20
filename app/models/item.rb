@@ -10,4 +10,7 @@ class Item < ApplicationRecord
   validates :name, :describe, :price, presence: true
   #カテゴリ、商品の状態、配送料の負担、発送元の地域、発送までの日数の選択が「--」の時は保存できないようにする
   validates :category_id, :condition_id, :delivery_day_id, :delivery_fee_id, :prefecture_id, numericality: { other_than: 1 } 
+
+  belongs_to :user
+  has_one_attached :image
 end
