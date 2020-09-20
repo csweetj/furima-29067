@@ -22,7 +22,7 @@
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | name | string | null: false |
-| user | references | null: false, foreign_key: true|
+| user | reference | null: false, foreign_key: true|
 | describe      |string | null: false |
 | category_id      | int   | null: false |
 | condition_id   | int   | null: false |
@@ -47,8 +47,8 @@
 ## purchases テーブル
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
+| user   | reference | null: false, foreign_key: true |
+| item   | reference | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
