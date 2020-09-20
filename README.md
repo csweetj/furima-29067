@@ -22,7 +22,7 @@
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | name | string | null: false |
-| user_id | int | null: false, foreign_key: tyre|
+| user_id | references | null: false, foreign_key: true|
 | describe      |string | null: false |
 | category_id      | int   | null: false |
 | condition_id   | int   | null: false |
