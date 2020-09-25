@@ -43,6 +43,16 @@ RSpec.describe Item, type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include("Price between ¥300〜¥9,999,999")
     end
+    it "値段が¥300以下を入力した場合商品を出品できない" do
+      @item.price = 299
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Price between ¥300〜¥9,999,999")
+    end
+    it "値段が¥9,999,999以上を入力した場合商品を出品できない" do
+      @item.price = 10000000
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Price between ¥300〜¥9,999,999")
+    end
     it "カテゴリーが未選択だと出品できない" do
       @item.category_id = 1
       @item.valid?
