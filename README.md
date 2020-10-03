@@ -15,7 +15,7 @@
 
 ### Association
 - has_many :items
-- has_many :order
+- has_many :orders
 
 
 ## items テーブル
@@ -61,7 +61,7 @@
 | ------ | ---------- | ------------------------------ |
 | order   | references | null: false, foreign_key: true |
 | postal_code| string | null: false |
-| prefecture_id| int | null: false　|
+| prefecture| int | null: false　|
 | city | string | null: false |
 | house_number | string | null: false |
 | building_name| string |  |
@@ -69,4 +69,3 @@
 
 ### Association
 - belongs_to :order
-- belongs_to_active_hash :prefecture
