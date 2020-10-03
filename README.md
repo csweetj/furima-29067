@@ -44,7 +44,7 @@
 
  
 
-## purchases テーブル
+## orders テーブル
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
@@ -59,7 +59,7 @@
 ## shippings テーブル
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| purchase   | references | null: false, foreign_key: true |
+| order   | references | null: false, foreign_key: true |
 | postal_code| string | null: false |
 | prefecture_id| int | null: false　|
 | municipality| string | null: false |
