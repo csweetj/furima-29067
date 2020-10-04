@@ -1,5 +1,5 @@
 const pay = () => {
-  Payjp.setPublicKey("");
+  Payjp.setPublicKey(""); //非公開テストキー
   const form = document.getElementById("charge-form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
