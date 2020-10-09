@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    
     @order_address = OrderAddress.new(order_params)
     if @order_address.valid?
       pay_item
@@ -21,7 +22,7 @@ class OrdersController < ApplicationController
   private
 
   def set_item
-    @item = Item.find_by(params[:id])
+    @item = Item.find(params[:item_id])
   end
 
   def order_params
