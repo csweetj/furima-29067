@@ -78,7 +78,7 @@ RSpec.describe Item, type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include("発送元の地域を選択してください")
     end
-    it "ユーザーが紐付いていないとツイートは保存できない" do
+    it "ユーザーが紐付いていないと出品できない" do
       @item.user = nil
       @item.valid?
       expect(@item.errors.full_messages).to include("Userを入力してください")
